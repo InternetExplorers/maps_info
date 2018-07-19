@@ -1,5 +1,3 @@
-const faker = require('./faker.js');
-
 DROP DATABASE IF EXISTS maps_info;
 
 CREATE DATABASE maps_info;
@@ -57,5 +55,3 @@ CREATE TABLE business_info (
   sun time NOT NULL,
   PRIMARY KEY (id)
 );
-
-INSERT INTO map (address) VALUES (faker.mockAddress)
