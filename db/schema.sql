@@ -46,12 +46,12 @@ CREATE TABLE more_business_info (
 
 CREATE TABLE business_info (
   id int NOT NULL AUTO_INCREMENT,
-  mon time NOT NULL,
-  tue time NOT NULL,
-  wed time NOT NULL,
-  thu time NOT NULL,
-  fri time NOT NULL,
-  sat time NOT NULL,
-  sun time NOT NULL,
+  mon varchar(100),
+  tue varchar(100),
+  wed varchar(100),
+  thu varchar(100),
+  fri varchar(100),
+  sat varchar(100),
+  sun varchar(100),
   PRIMARY KEY (id)
 );
