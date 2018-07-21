@@ -1,7 +1,6 @@
 const mysql = require('mysql');
 const faker = require('faker');
 
-
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -16,15 +15,13 @@ connection.connect(function(err) {
 });
 
 
-// const mockAddress =  `${faker.address.streetAddress()}, ${faker.address.city()}, ${faker.address.country()}`;
-// const queryStr = `INSERT INTO map (address, relative_location, phone_number, business_id) VALUES('${mockAddress}', '${mockAddress}', 12345, 2)`;
-// connection.query(queryStr, (err, results) => {
-//   if (err) {
-//     throw err;
-//   } else {
-//     console.log('INSERT FUNCTION SUCCESS', results);
-//   }
-// });
+const mockAddress =  `${faker.address.streetAddress()}, ${faker.address.city()}, ${faker.address.country()}`;
+const queryStr1 = `INSERT INTO map (address, relative_location, phone_number, business_id) VALUES('${mockAddress}', '${mockAddress}', 12345, 2)`;
+connection.query(queryStr1, (err, results) => {
+  if (err) {
+    throw err;
+  };
+});
 
 const mockTime = function () {
   const openingTime = `${Math.floor(Math.random() * 6) + 6}:${Math.floor(Math.random() * 59)} am`;

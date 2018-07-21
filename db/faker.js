@@ -1,8 +1,6 @@
 const faker = require('faker');
 const connection = require('./connection.js');
 
-//const mockAddress =  faker.address.streetAddress() + faker.address.city() + faker.address.country();
-
 const mockAddress = function() {
   var streetNum = [0,1,2,3,4,5,6,7,8,9];
   var streetName = ['fillmore st', 'grove st', 'hayes st', 'valencia st', 'mission st', 'brannan st', 'geary st', 'market st', 'folsom st', '1st st'];
@@ -20,11 +18,21 @@ const mockTime = function () {
   return `${openingTime} - ${closingTime}`;
 };
 
-const yesOrNo = function () {
-  const boolean = Math.floor((math.random() + 1) + 1);
+const yesOrNo = () => {
+  const boolean = Math.floor((Math.random() + 1) + 1);
   if (boolean === 0) {
     return 'yes';
   } return 'no';
+};
+
+const mockLatitude = () => {
+  //  get num between 19 and ~65 (including float)
+  Math.floor((Math.random() * 46) + 19) + Number((Math.random()).toFixed(5));
+}
+
+const mockLongitude = () => {
+  //  get num between ~ -161 to -68 (including float)
+  return (Math.floor((Math.random() * 93) + 68) + Number((Math.random()).toFixed(5))) * (-1);
 };
 
 module.exports = mockAddress;
