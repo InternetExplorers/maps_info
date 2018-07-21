@@ -8,11 +8,11 @@ const mockAddress = function() {
   return randomAddress;
 };
 
-const mockPhoneNum = () => {
+const mockPhoneNum = function() {
   return faker.phoneNumber();
 };
 
-const mockTime = () => {
+const mockTime = function () {
   const openingTime = `${Math.floor(Math.random() * 6) + 6}:${Math.floor(Math.random() * 59)} am`;
   const closingTime = `${Math.floor(Math.random() * 11) + 1}:${Math.floor(Math.random() * 59)} pm`;
   return `${openingTime} - ${closingTime}`;
