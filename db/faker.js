@@ -1,14 +1,15 @@
 const faker = require('faker');
 const connection = require('./connection.js');
 
-const mockAddress = function() {
+const mockAddress = function () {
   var streetNum = [1,2,3,4,5,6,7,8,9,10];
   var streetName = ['fillmore st', 'grove st', 'hayes st', 'valencia st', 'mission st', 'brannan st', 'geary st', 'market st', 'folsom st', '1st st'];
   return `${streetNum[Math.floor(Math.random() * 10)]}, ${streetName[Math.floor(Math.random() * 10)]}, San Francisco, CA`;
 };
 
-const mockPhoneNum = function() {
-  return faker.phoneNumber();
+const mockPhoneNum = function () {
+  console.log("PHONEEEE NUM", faker.phone.phoneNumberFormat())
+  return faker.phone.phoneNumberFormat();
 };
 
 const mockTime = function () {
@@ -41,7 +42,7 @@ connection.query(queryStr, (err, results) => {
   }; 
 });
 
-const queryStr1 = `INSERT INTO map (address, relative_location, phone_number, business_id) VALUES('${mockAddress()}', '${mockAddress()}', 12345, 2)`;
+const queryStr1 = `INSERT INTO map (address, relative_location, phone_number, business_id) VALUES('${mockAddress()}', '${mockAddress()}', '${mockPhoneNum()}', 2)`;
 connection.query(queryStr1, (err, results) => {
   if (err) {
     throw err;

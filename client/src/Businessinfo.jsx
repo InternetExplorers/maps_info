@@ -8,18 +8,14 @@ const businessInfo = (props) => {
       <b>Delivery</b><br />
       <b>Take-out</b><br />
       <b>Accepts Credit Cards</b><br />
-      <b>Good For</b><br/>
-      <b>Parking Street</b><br />
+      <b>Accepts Google Pay</b><br />
       <b>Bike Parking</b><br/>
       <b>Wheelchair Accessible</b><br />
       <b>Good for Kids</b><br />
       <b>Good for Groups</b><br />
-      <b>Attire</b><br />
-      <b>Noise Level</b><br />
-      <b>Alcohol</b><br/>
-      <b>Outdoor Seating</b><br />
       <b>Wi-Fi</b><br />
       <b>Has TV</b><br />
+      <b>Water Service</b><br />
       <b>Caters</b><br />
       <b>Gender Neutral Restrooms</b>
     </div>
