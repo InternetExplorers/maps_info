@@ -1,12 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-const Search = (props) => {
-  return (
-    <div></input>
-    <input type = 'submit'></input>
-    </div>
-  )
+class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchValue: null,
+    };
+  }
+
+  handleValueChange(e) {
+    this.setState({
+      searchValue: e.target.value,
+    });
+  }
+
+  render () {
+    return (
+      <div>
+        <input type="text" onChange={this.handleValueChange.bind(this)} />
+        <input type="submit" value="Search" onClick={() => { this.props.handleSearch(this.state.searchValue); }} />
+      </div>
+    );
+  }
 }
 
 export default Search;

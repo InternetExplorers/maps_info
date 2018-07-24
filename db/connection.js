@@ -15,6 +15,7 @@ connection.connect(function(err) {
 });
 
 
+
 const mockAddress =  `${faker.address.streetAddress()}, ${faker.address.city()}, ${faker.address.country()}`;
 const queryStr1 = `INSERT INTO map (address, relative_location, phone_number, business_id) VALUES('${mockAddress}', '${mockAddress}', 12345, 2)`;
 connection.query(queryStr1, (err, results) => {

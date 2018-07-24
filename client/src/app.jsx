@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import Search from './Search.jsx';
+import Businesshours from './Businesshours.jsx';
+import Businessinfo from './Businessinfo.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,11 +11,21 @@ class App extends React.Component {
     this.state = {
     }
   }
+
+  componentDidMount() {
+    
+  }
+
+  handleSearch(searchValue) {
+  }
   
-  render () {
+  render() {
     return (
       <div>
-      STUFF WORKS
+        <Search handleSearch={this.handleSearch.bind(this)} />
+        <Businesshours />
+        <br />
+        <Businessinfo />
       </div>
     );
   }
