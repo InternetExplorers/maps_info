@@ -4,7 +4,7 @@ CREATE DATABASE maps_info;
 
 USE maps_info;
 
-CREATE TABLE business (
+CREATE TABLE businesses (
   id int NOT NULL AUTO_INCREMENT,
   name varchar(100) NOT NULL,
   PRIMARY KEY (id)

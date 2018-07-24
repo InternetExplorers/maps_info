@@ -2,10 +2,9 @@ const faker = require('faker');
 const connection = require('./connection.js');
 
 const mockAddress = function() {
-  var streetNum = [0,1,2,3,4,5,6,7,8,9];
+  var streetNum = [1,2,3,4,5,6,7,8,9,10];
   var streetName = ['fillmore st', 'grove st', 'hayes st', 'valencia st', 'mission st', 'brannan st', 'geary st', 'market st', 'folsom st', '1st st'];
-  var randomAddress = `${streetNum(Math.floor(Math.random() * 11))}, ${streetName(Math.floor(math.random() * 11))}, San Francisco, CA`;
-  return randomAddress;
+  return `${streetNum[Math.floor(Math.random() * 10)]}, ${streetName[Math.floor(Math.random() * 10)]}, San Francisco, CA`;
 };
 
 const mockPhoneNum = function() {
@@ -34,5 +33,19 @@ const mockLongitude = () => {
   //  get num between ~ -161 to -68 (including float)
   return (Math.floor((Math.random() * 93) + 68) + Number((Math.random()).toFixed(5))) * (-1);
 };
+
+const queryStr = `INSERT INTO business_info (mon, tue, wed, thu, fri, sat, sun) VALUES('${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}')`;
+connection.query(queryStr, (err, results) => {
+  if (err) {
+    throw err;
+  }; 
+});
+
+const queryStr1 = `INSERT INTO map (address, relative_location, phone_number, business_id) VALUES('${mockAddress()}', '${mockAddress()}', 12345, 2)`;
+connection.query(queryStr1, (err, results) => {
+  if (err) {
+    throw err;
+  };
+});
 
 module.exports = mockAddress;
