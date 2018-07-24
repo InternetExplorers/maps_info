@@ -35,6 +35,7 @@ CREATE TABLE more_business_info (
   waiter_service boolean NOT NULL,
   caters boolean NOT NULL,
   gender_neutral_restrooms boolean NOT NULL,
+  business_id int NOT NULL,
   PRIMARY KEY (id)
 );
 
@@ -47,6 +48,7 @@ CREATE TABLE business_info (
   fri varchar(100),
   sat varchar(100),
   sun varchar(100),
+  business_id int NOT NULL,
   PRIMARY KEY (id)
 );
 

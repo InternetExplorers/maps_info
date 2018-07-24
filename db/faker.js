@@ -8,7 +8,6 @@ const mockAddress = function () {
 };
 
 const mockPhoneNum = function () {
-  console.log("PHONEEEE NUM", faker.phone.phoneNumberFormat())
   return faker.phone.phoneNumberFormat();
 };
 
@@ -18,11 +17,8 @@ const mockTime = function () {
   return `${openingTime} - ${closingTime}`;
 };
 
-const yesOrNo = () => {
-  const boolean = Math.floor((Math.random() + 1) + 1);
-  if (boolean === 0) {
-    return 'yes';
-  } return 'no';
+const trueOrFalse = () => {
+  return Math.floor(Math.random() < 0.5);
 };
 
 const mockLatitude = () => {
@@ -35,18 +31,40 @@ const mockLongitude = () => {
   return (Math.floor((Math.random() * 93) + 68) + Number((Math.random()).toFixed(5))) * (-1);
 };
 
-const queryStr = `INSERT INTO business_info (mon, tue, wed, thu, fri, sat, sun) VALUES('${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}')`;
-connection.query(queryStr, (err, results) => {
-  if (err) {
-    throw err;
-  }; 
-});
+const insertMockTime = () => {
+  for (let i = 1; i <= 100; i++) {
+    const queryStr = `INSERT INTO business_info (mon, tue, wed, thu, fri, sat, sun, business_id) VALUES('${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', ${i})`;
+    connection.query(queryStr, (err, results) => {
+      if (err) {
+        throw err;
+      }
+    });
+  }
+};
 
-const queryStr1 = `INSERT INTO map (address, relative_location, phone_number, business_id) VALUES('${mockAddress()}', '${mockAddress()}', '${mockPhoneNum()}', 2)`;
-connection.query(queryStr1, (err, results) => {
-  if (err) {
-    throw err;
-  };
-});
+const insertMockAddress = () => {
+  for (let i = 1; i <= 100; i++) {
+    const queryStr = `INSERT INTO map (address, relative_location, phone_number, business_id) VALUES('${mockAddress()}', '${mockAddress()}', '${mockPhoneNum()}', ${i})`;
+    connection.query(queryStr, (err, results) => {
+      if (err) {
+        throw err;
+      }
+    });  
+  }
+};
 
+const insertMockBusinessHrs = () => {
+  for (let i = 1; i <= 100; i++) {
+    const queryStr = `INSERT INTO more_business_info (take_reservations, delivery, take_out, accepts_credit_cards, accepts_google_pay, bike_parking, wheelchair_accessible, good_for_kids, good_for_groups, wi_fi, has_tv, waiter_service, caters, gender_neutral_restrooms, business_id) VALUES('${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', ${i})`;
+    connection.query(queryStr, (err, results) => {
+      if (err) {
+        throw err;
+      }
+    }); 
+  }
+};
+
+insertMockTime();
+insertMockAddress();
+insertMockBusinessHrs();
 module.exports = mockAddress;
