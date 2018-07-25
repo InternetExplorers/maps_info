@@ -4,6 +4,8 @@ import $ from 'jquery';
 import Search from './Search.jsx';
 import Businesshours from './Businesshours.jsx';
 import Businessinfo from './Businessinfo.jsx';
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import GoogleMap from './Map.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,7 +41,6 @@ class App extends React.Component {
             businessHours[key] = value;
           }
         });
-        console.log(businessInfo)
         this.setState({
           businessHours: businessHours,
           businessInfo: businessInfo,
@@ -58,6 +59,17 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <div style={{ width: '100%', height: 400 }}>
+        <GoogleMap 
+          google={this.props.google}
+          initialCenter={{
+            lat: 90.854885,
+            lng: -88.081807
+          }}
+          zoom={13}
+          onClick={this.onMapClicked}
+        />
+        </div> 
         <Search handleSearch={this.handleSearch.bind(this)} />
         <Businesshours businessHours={this.state.businessHours} />
         <br />
