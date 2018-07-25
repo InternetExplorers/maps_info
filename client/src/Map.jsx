@@ -11,25 +11,24 @@ class googleMap extends React.Component {
 
     };
   }
-   render() {
+  render() {
     return (
       <div className='Map'>
-        <Map google={this.props.google} zoom={this.props.zoom}>
-   
+        <Map 
+          google={this.props.google}
+          zoom={this.props.zoom}
+          initialCenter={this.props.initialCenter}
+          style={this.props.style}
+        >
           <Marker onClick={this.onMarkerClick}
                   name={'Current location'} />
-   
           <InfoWindow onClose={this.onInfoWindowClose}>
-              <div>
-                <h1>GOOGLE MAP H1</h1>
-              </div>
           </InfoWindow>
         </Map>
       </div>
     );
   }
 }
-
 
 export default GoogleApiWrapper({
   apiKey: (Api.KEY),

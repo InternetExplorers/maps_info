@@ -54,26 +54,30 @@ class App extends React.Component {
   // }
 
   handleSearch(searchValue) {
+    console.log(searchValue)
   }
   
   render() {
     return (
       <div>
-        <div style={{ width: '100%', height: 400 }}>
-        <GoogleMap 
-          google={this.props.google}
-          initialCenter={{
-            lat: 90.854885,
-            lng: -88.081807
-          }}
-          zoom={13}
-          onClick={this.onMapClicked}
-        />
-        </div> 
-        <Search handleSearch={this.handleSearch.bind(this)} />
-        <Businesshours businessHours={this.state.businessHours} />
-        <br />
-        <Businessinfo businessInfo={this.state.businessInfo} />
+        <div style={{ width: '40%', height: 400 }}>
+          <GoogleMap
+            google={this.props.google}
+            initialCenter={{
+              lat: 40.730610,
+              lng: -73.935242,
+            }}
+            zoom={12}
+            onClick={this.onMapClicked}
+            style={{ width: '45%', height: '45%', position: 'relative' }}
+          />
+        </div>
+        <div>
+          <Search handleSearch={this.handleSearch.bind(this)} />
+          <Businesshours businessHours={this.state.businessHours} />
+          <br />
+          <Businessinfo businessInfo={this.state.businessInfo} />
+        </div>
       </div>
     );
   }
