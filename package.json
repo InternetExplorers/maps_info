@@ -36,6 +36,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "faker": "^4.1.0",
+    "google-maps-react": "^2.0.2",
     "jquery": "^3.3.1",
     "mysql": "^2.16.0",
     "path": "^0.12.7",
