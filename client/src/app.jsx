@@ -9,15 +9,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      businessHours: [],
+      businessHours: {},
       businessInfo: [],
       address: [],
     };
   }
 
   componentDidMount() {
-    this.getBusinessInfo(1);
-    
+    this.getBusinessInfo(1);  
   }
 
   getBusinessInfo(ID) {
@@ -26,7 +25,10 @@ class App extends React.Component {
       url: `/businesses/${ID}/business_info`,
       contentType: 'application/json',
       success: (data) => {
-        console.log("SUCESS GET", data)
+        this.setState({
+          businessHours: data[0],
+        });
+        console.log(this.state.businessHours)
       }
     });
   }
@@ -42,7 +44,7 @@ class App extends React.Component {
     return (
       <div>
         <Search handleSearch={this.handleSearch.bind(this)} />
-        <Businesshours />
+        <Businesshours businessHours = {this.state.businessHours}/>
         <br />
         <Businessinfo />
       </div>
