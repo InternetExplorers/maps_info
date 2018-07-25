@@ -17,6 +17,8 @@ class App extends React.Component {
       businessInfo: {},
       address: null,
       phonenumber: null,
+      longitude: null,
+      latitude: null,
     };
   }
 
@@ -64,15 +66,17 @@ class App extends React.Component {
           address: address,
         });
         Geocode.setApiKey(Api.KEY);
-        Geocode.fromAddress('388 fulton st, san francisco, CA 94102').then(
+        Geocode.fromAddress(address).then(
           response => {
             const { lat, lng } = response.results[0].geometry.location;
-            console.log(lat, lng);
-
+            this.setState({
+              longitude: lng,
+              latitude: lat,
+            })
           },
           error => {
             console.error(error);
-          }
+          },
         );
       },
     });
@@ -89,8 +93,8 @@ class App extends React.Component {
           <GoogleMap
             google={this.props.google}
             initialCenter={{
-              lat: 40.730610,
-              lng: -73.935242,
+              lat: this.state.latitude,
+              lng: this.state.longitude,
             }}
             zoom={12}
             onClick={this.onMapClicked}
