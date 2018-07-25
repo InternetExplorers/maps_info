@@ -9,12 +9,31 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    }
+      businessHours: [],
+      businessInfo: [],
+      address: [],
+    };
   }
 
   componentDidMount() {
+    this.getBusinessInfo(1);
     
   }
+
+  getBusinessInfo(ID) {
+    $.ajax({
+      type: 'GET',
+      url: `/businesses/${ID}/business_info`,
+      contentType: 'application/json',
+      success: (data) => {
+        console.log("SUCESS GET", data)
+      }
+    });
+  }
+
+  // getBusinessAddress() {
+
+  // }
 
   handleSearch(searchValue) {
   }
