@@ -5,6 +5,7 @@ import Search from './Search.jsx';
 import Businesshours from './Businesshours.jsx';
 import Businessinfo from './Businessinfo.jsx';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import Geocode from "react-geocode";
 import GoogleMap from './Map.jsx';
 
 class App extends React.Component {
@@ -18,7 +19,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getBusinessInfo(1);  
+    this.getBusinessInfo(1);
+    this.getBusinessAddress(1); 
   }
 
   getBusinessInfo(ID) {
@@ -49,9 +51,16 @@ class App extends React.Component {
     });
   }
 
-  // getBusinessAddress() {
-
-  // }
+  getBusinessAddress() {
+    $.ajax({
+      type: 'GET',
+      url: `/businesses/${ID}/business_map`,
+      contentType: 'application/json',
+      success: (data) => {
+  
+      },
+    });
+  }
 
   handleSearch(searchValue) {
     console.log(searchValue)
@@ -73,10 +82,11 @@ class App extends React.Component {
           />
         </div>
         <div>
-          <Search handleSearch={this.handleSearch.bind(this)} />
+          
           <Businesshours businessHours={this.state.businessHours} />
           <br />
           <Businessinfo businessInfo={this.state.businessInfo} />
+          <Search handleSearch={this.handleSearch.bind(this)} />
         </div>
       </div>
     );
