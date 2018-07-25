@@ -1,28 +1,24 @@
 const faker = require('faker');
 const connection = require('./connection.js');
 
-const mockAddress = function() {
-  var streetNum = [0,1,2,3,4,5,6,7,8,9];
+const mockAddress = function () {
+  var streetNum = [1,2,3,4,5,6,7,8,9,10];
   var streetName = ['fillmore st', 'grove st', 'hayes st', 'valencia st', 'mission st', 'brannan st', 'geary st', 'market st', 'folsom st', '1st st'];
-  var randomAddress = `${streetNum(Math.floor(Math.random() * 11))}, ${streetName(Math.floor(math.random() * 11))}, San Francisco, CA`;
-  return randomAddress;
+  return `${streetNum[Math.floor(Math.random() * 10)]}, ${streetName[Math.floor(Math.random() * 10)]}, San Francisco, CA`;
 };
 
-const mockPhoneNum = function() {
-  return faker.phoneNumber();
+const mockPhoneNum = function () {
+  return faker.phone.phoneNumberFormat();
 };
 
 const mockTime = function () {
-  const openingTime = `${Math.floor(Math.random() * 6) + 6}:${Math.floor(Math.random() * 59)} am`;
-  const closingTime = `${Math.floor(Math.random() * 11) + 1}:${Math.floor(Math.random() * 59)} pm`;
+  const openingTime = `${Math.floor(Math.random() * 6) + 6}:${Math.floor(Math.random() * 60)} am`;
+  const closingTime = `${Math.floor(Math.random() * 11) + 1}:${Math.floor(Math.random() * 60)} pm`;
   return `${openingTime} - ${closingTime}`;
 };
 
-const yesOrNo = () => {
-  const boolean = Math.floor((Math.random() + 1) + 1);
-  if (boolean === 0) {
-    return 'yes';
-  } return 'no';
+const trueOrFalse = () => {
+  return Math.floor(Math.random() < 0.5);
 };
 
 const mockLatitude = () => {
@@ -35,4 +31,40 @@ const mockLongitude = () => {
   return (Math.floor((Math.random() * 93) + 68) + Number((Math.random()).toFixed(5))) * (-1);
 };
 
+const insertMockTime = () => {
+  for (let i = 1; i <= 100; i++) {
+    const queryStr = `INSERT INTO business_info (mon, tue, wed, thu, fri, sat, sun, business_id) VALUES('${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', '${mockTime()}', ${i})`;
+    connection.query(queryStr, (err, results) => {
+      if (err) {
+        throw err;
+      }
+    });
+  }
+};
+
+const insertMockAddress = () => {
+  for (let i = 1; i <= 100; i++) {
+    const queryStr = `INSERT INTO map (address, relative_location, phone_number, business_id) VALUES('${mockAddress()}', '${mockAddress()}', '${mockPhoneNum()}', ${i})`;
+    connection.query(queryStr, (err, results) => {
+      if (err) {
+        throw err;
+      }
+    });  
+  }
+};
+
+const insertMockBusinessHrs = () => {
+  for (let i = 1; i <= 100; i++) {
+    const queryStr = `INSERT INTO more_business_info (take_reservations, delivery, take_out, accepts_credit_cards, accepts_google_pay, bike_parking, wheelchair_accessible, good_for_kids, good_for_groups, wi_fi, has_tv, waiter_service, caters, gender_neutral_restrooms, business_id) VALUES('${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', '${trueOrFalse()}', ${i})`;
+    connection.query(queryStr, (err, results) => {
+      if (err) {
+        throw err;
+      }
+    }); 
+  }
+};
+
+insertMockTime();
+insertMockAddress();
+insertMockBusinessHrs();
 module.exports = mockAddress;
