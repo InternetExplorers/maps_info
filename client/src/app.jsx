@@ -27,8 +27,10 @@ class App extends React.Component {
       success: (data) => {
         const businessInfo = {};
         Object.entries(data[0]).forEach(([key, value]) => {
-          if (value === 0 || value === 1) {
-            businessInfo[key] = value;
+          if (value === 0) {
+            businessInfo[key] = 'No';
+          } else if (value === 1) {
+            businessInfo[key] = 'Yes';
           }
         });
         const businessHours = {};
@@ -37,6 +39,7 @@ class App extends React.Component {
             businessHours[key] = value;
           }
         });
+        console.log(businessInfo)
         this.setState({
           businessHours: businessHours,
           businessInfo: businessInfo,
