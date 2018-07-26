@@ -5,7 +5,6 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 class googleMap extends React.Component {
   render() {
-    console.log(this.props.center, this.props.initialCenter)
     return (
       <div className='Map'>
         <Map 
@@ -14,7 +13,6 @@ class googleMap extends React.Component {
           initialCenter={this.props.initialCenter}
           center={this.props.center}
           style={this.props.style}
-
         >
           <Marker onClick={this.onMarkerClick}
                   name={'Current location'} 

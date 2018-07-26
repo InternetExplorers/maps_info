@@ -22,13 +22,15 @@ class App extends React.Component {
       phonenumber: null,
       longitude: null,
       latitude: null,
+      url: null,
+      initialurl: 'theforesttrumpet.com',
     };
     this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidMount() {
-    this.getBusinessInfo(5);
-    this.getBusinessAddress(5);
+    this.getBusinessInfo(1);
+    this.getBusinessAddress(1);
   }
 
   getBusinessInfo(ID) {
@@ -119,7 +121,6 @@ class App extends React.Component {
   }
 
   handleSearch(businessName) {
-
     $.ajax({
       type: 'GET',
       url: `/businesses/${businessName}`,
@@ -130,12 +131,15 @@ class App extends React.Component {
         this.getBusinessAddress(businessID);
       },
     });
+    this.setState({
+      url: `${businessName}.com`
+    })
   }
 
   render() {
     const {
       phonenumber, address, relativeaddress, relativedistrict,
-      businessHours, businessInfo, longitude, latitude,
+      businessHours, businessInfo, longitude, latitude, url, initialurl,
     } = this.state;
     return (
       <div>
@@ -163,6 +167,8 @@ class App extends React.Component {
               address={address}
               relativeAddress={relativeaddress}
               relativeDistrict={relativedistrict}
+              url={url}
+              initialurl={initialurl}
             />
           </div>
         </div>
