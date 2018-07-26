@@ -10,7 +10,7 @@ class Mapinfo extends React.Component {
   }
 
   handleChange(e) {
-    console.log("yo")
+    //todo
   }
 
   render() {

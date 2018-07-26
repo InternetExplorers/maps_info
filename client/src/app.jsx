@@ -131,9 +131,10 @@ class App extends React.Component {
         this.getBusinessAddress(businessID);
       },
     });
+    const url = `${businessName}.com`;
     this.setState({
-      url: `${businessName}.com`
-    })
+      url: url.replace(/\s/g, ''),
+    });
   }
 
   render() {
@@ -172,6 +173,7 @@ class App extends React.Component {
             />
           </div>
         </div>
+        <br />
         <div>
           <div className="BusinessHours">
             <Businesshours businessHours={businessHours} />
