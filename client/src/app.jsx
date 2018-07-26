@@ -68,29 +68,29 @@ class App extends React.Component {
         this.setState({
           address: address,
         });
-        if (address.includes("fillmore")) {
+        if (address.includes("Fillmore")) {
           this.setState({
             relativeaddress: "b/t Webster St & Steiner St",
             relativedistrict: "Western Addition, Fillmore",
           });
-        } else if (address.includes("hayes")) {
+        } else if (address.includes("Hayes")) {
           this.setState({
-            relativeAddress: "b/t Grove St & Fell St",
+            relativeaddress: "b/t Grove St & Fell St",
             relativedistrict: "Hayes Valley",
           });
-        } else if (address.includes("valencia")) {
+        } else if (address.includes("Valencia")) {
           this.setState({
-            relativeAddress: "b/t Guerrero St & Mission St",
+            relativeaddress: "b/t Guerrero St & Mission St",
             relativedistrict: "Mission",
           });
-        } else if (address.includes("mission")) {
+        } else if (address.includes("Mission")) {
           this.setState({
-            relativeAddress: "b/t Valencia St & S Van Ness St",
+            relativeaddress: "b/t Valencia St & S Van Ness St",
             relativedistrict: "Mission",
           });
-        } else if (address.includes("brannan")) {
+        } else if (address.includes("Brannan")) {
           this.setState({
-            relativeAddress: "b/t Townsend St & Bryant St",
+            relativeaddress: "b/t Townsend St & Bryant St",
             relativedistrict: "SOMA",
           });
         }
@@ -112,13 +112,12 @@ class App extends React.Component {
   }
 
   handleSearch(searchValue) {
-    console.log(searchValue)
   }
-  
+
   render() {
     return (
       <div>
-        <div style={{ width: '40%', height: 400 }}>
+        <div style={{ width: '40%', height: 300 }}>
           <GoogleMap
             google={this.props.google}
             initialCenter={{
@@ -131,10 +130,14 @@ class App extends React.Component {
           />
         </div>
         <div>
-          <Mapinfo phoneNumber={this.state.phonenumber} address={this.state.address} a/>
+          <Mapinfo 
+          phoneNumber={this.state.phonenumber} 
+          address={this.state.address} 
+          relativeAddress={this.state.relativeaddress}
+          relativeDistrict={this.state.relativedistrict}
+          />
         </div>
         <div>
-          
           <Businesshours businessHours={this.state.businessHours} />
           <br />
           <Businessinfo businessInfo={this.state.businessInfo} />
