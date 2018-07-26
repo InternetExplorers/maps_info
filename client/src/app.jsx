@@ -23,6 +23,8 @@ class App extends React.Component {
       longitude: null,
       latitude: null,
     };
+    this.handleSearch = this.handleSearch.bind(this);
+
   }
 
   componentDidMount() {
@@ -113,10 +115,13 @@ class App extends React.Component {
   }
 
   handleSearch(searchValue) {
-
   }
 
   render() {
+    const {
+      phonenumber, address, relativeaddress, relativedistrict,
+      businessHours, businessInfo, longitude, latitude,
+    } = this.state;
     return (
       <div>
         <div className="Mapbox">
@@ -124,8 +129,8 @@ class App extends React.Component {
             <GoogleMap
               google={this.props.google}
               initialCenter={{
-                lat: this.state.latitude,
-                lng: this.state.longitude,
+                lat: latitude,
+                lng: longitude,
               }}
               zoom={14}
               onClick={this.onMapClicked}
@@ -133,22 +138,22 @@ class App extends React.Component {
             />
           </div>
           <div className="MapInfo">
-            <Mapinfo 
-            phoneNumber={this.state.phonenumber} 
-            address={this.state.address} 
-            relativeAddress={this.state.relativeaddress}
-            relativeDistrict={this.state.relativedistrict}
+            <Mapinfo
+              phoneNumber={phonenumber}
+              address={address}
+              relativeAddress={relativeaddress}
+              relativeDistrict={relativedistrict}
             />
           </div>
         </div>
         <div>
           <div className="BusinessHours">
-            <Businesshours businessHours={this.state.businessHours} />
+            <Businesshours businessHours={businessHours} />
             <br />
           </div>
           <div className="BusinessInfo">
-            <Businessinfo businessInfo={this.state.businessInfo} />
-            <Search handleSearch={this.handleSearch.bind(this)} />
+            <Businessinfo businessInfo={businessInfo} />
+            <Search handleSearch={this.handleSearch} />
           </div>
         </div>
       </div>

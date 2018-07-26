@@ -3,10 +3,10 @@ import React from 'react';
 const businessInfo = (props) => {
   return (
     <div>
-      <span class="MoreBusinessInfoHeading">
+      <span className="MoreBusinessInfoHeading">
       More business info
       </span>
-      <div class="MoreBusinessInfo">
+      <div className="MoreBusinessInfo">
         Take Reservations <b>{props.businessInfo.take_reservations}</b>
         <br />
         Delivery <b>{props.businessInfo.delivery}</b>
