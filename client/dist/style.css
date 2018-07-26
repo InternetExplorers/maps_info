@@ -20,14 +20,29 @@
 .MapInfo {
   width: 288px;
   height: 156px;
-  box-sizing: border-box;
-  padding-left: 5px;
-  padding-top: 5px;
 }
 
+.LeftIcons {
+  width: 20px;
+  height: 150px;
+  background-image: url(https://s3.us-east-2.amazonaws.com/maps12345/Screen+Shot+2018-07-26+at+3.00.14+PM.png);
+  background-size: 22px 150px;
+  top-padding: 5px;
+}
+
+.RightIcons {
+  width: 46px;
+  height: 20px;
+  background-image: url(https://s3.us-east-2.amazonaws.com/maps12345/Screen+Shot+2018-07-26+at+3.00.38+PM.png);
+  background-size: 46px 20px;
+  background-repeat: no-repeat;
+}
+}
 .address-box {
   width: 254px;
   height: 72px;
+  box-sizing: border-box;
+  border: 1px solid grey;
 }
 
 .get-direction {
