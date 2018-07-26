@@ -4,14 +4,16 @@ class Mapinfo extends React.Component {
   render() {
     return (
       <div>
-        <b>
-        {this.props.address}
-        </b>
-        <br />
-        {this.props.relativeAddress}
-        <br />
-        {this.props.relativeDistrict}
-        <br />
+        <span className="address-box">
+          <b>
+          {this.props.address}
+          </b>
+          <br />
+          {this.props.relativeAddress}
+          <br />
+          {this.props.relativeDistrict}
+          <br />
+        </span>
         Get Directions
         <br />
         {this.props.phoneNumber}

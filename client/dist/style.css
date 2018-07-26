@@ -1,0 +1,22 @@
+
+
+.Mapbox {
+  width: 300px;
+  height: 315px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.GoogleMap {
+  border: 1px solid grey;
+  width: 286px;
+  height: 135px;
+}
+
+.address-box {
+  width: 254px;
+  height: 72px;
+}

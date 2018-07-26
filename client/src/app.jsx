@@ -112,30 +112,33 @@ class App extends React.Component {
   }
 
   handleSearch(searchValue) {
+
   }
 
   render() {
     return (
       <div>
-        <div style={{ width: '40%', height: 300 }}>
-          <GoogleMap
-            google={this.props.google}
-            initialCenter={{
-              lat: this.state.latitude,
-              lng: this.state.longitude,
-            }}
-            zoom={12}
-            onClick={this.onMapClicked}
-            style={{ width: '45%', height: '45%', position: 'relative' }}
-          />
-        </div>
-        <div>
-          <Mapinfo 
-          phoneNumber={this.state.phonenumber} 
-          address={this.state.address} 
-          relativeAddress={this.state.relativeaddress}
-          relativeDistrict={this.state.relativedistrict}
-          />
+        <div className="Mapbox">
+          <div className="GoogleMap">
+            <GoogleMap
+              google={this.props.google}
+              initialCenter={{
+                lat: this.state.latitude,
+                lng: this.state.longitude,
+              }}
+              zoom={14}
+              onClick={this.onMapClicked}
+              style={{ width: '286', height: '135', position: 'relative' }}
+            />
+          </div>
+          <div className="MapInfo">
+            <Mapinfo 
+            phoneNumber={this.state.phonenumber} 
+            address={this.state.address} 
+            relativeAddress={this.state.relativeaddress}
+            relativeDistrict={this.state.relativedistrict}
+            />
+          </div>
         </div>
         <div>
           <Businesshours businessHours={this.state.businessHours} />
