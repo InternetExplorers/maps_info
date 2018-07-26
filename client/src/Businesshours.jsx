@@ -3,7 +3,9 @@ import React from 'react';
 const businessHours = (props) => {
   return (
     <div>
-      <b>Hours</b>
+      <span className="Hours">
+      Hours
+      </span>
       <br></br>
       <b>Mon</b> {props.businessHours.mon}
       <br />

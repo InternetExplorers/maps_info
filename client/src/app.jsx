@@ -67,6 +67,7 @@ class App extends React.Component {
         const address = data[0].address;
         this.setState({
           address: address,
+          phonenumber: data[0].phone_number,
         });
         if (address.includes("Fillmore")) {
           this.setState({
@@ -141,10 +142,14 @@ class App extends React.Component {
           </div>
         </div>
         <div>
-          <Businesshours businessHours={this.state.businessHours} />
-          <br />
-          <Businessinfo businessInfo={this.state.businessInfo} />
-          <Search handleSearch={this.handleSearch.bind(this)} />
+          <div className="BusinessHours">
+            <Businesshours businessHours={this.state.businessHours} />
+            <br />
+          </div>
+          <div className="BusinessInfo">
+            <Businessinfo businessInfo={this.state.businessInfo} />
+            <Search handleSearch={this.handleSearch.bind(this)} />
+          </div>
         </div>
       </div>
     );

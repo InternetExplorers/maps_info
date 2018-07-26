@@ -14,12 +14,16 @@ class Mapinfo extends React.Component {
           {this.props.relativeDistrict}
           <br />
         </span>
+        <span className="get-direction">
         Get Directions
         <br />
+        </span>
+        <span className="phone-number">
         {this.props.phoneNumber}
+        </span>
       </div>
     )
   }
 }
 
-export default Mapinfo
+export default Mapinfo;

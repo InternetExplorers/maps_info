@@ -1,10 +1,10 @@
 
-
 .Mapbox {
   width: 300px;
   height: 315px;
   border: 1px solid grey;
   box-sizing: border-box;
+  border-color: #DFDFDF;
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 5px;
@@ -12,11 +12,51 @@
 
 .GoogleMap {
   border: 1px solid grey;
+  border-color: #DFDFDF;
   width: 286px;
   height: 135px;
+}
+
+.MapInfo {
+  width: 288px;
+  height: 156px;
+  box-sizing: border-box;
+  padding-left: 5px;
+  padding-top: 5px;
 }
 
 .address-box {
   width: 254px;
   height: 72px;
 }
+
+.get-direction {
+  width: 278px;
+  height: 18px;
+}
+
+.phone-number {
+  width: 278px;
+  height: 18px;
+}
+
+.BusinessHours {
+  width: 270px;
+  height: 182px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  border-color: #DFDFDF;
+}
+
+.BusinessInfo {
+  width: 270px;
+  height: 300px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  border-color: #DFDFDF;
+}
+
+.Hours {
+  font-style: bold;
+}
+
