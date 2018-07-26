@@ -24,12 +24,11 @@ class App extends React.Component {
       latitude: null,
     };
     this.handleSearch = this.handleSearch.bind(this);
-
   }
 
   componentDidMount() {
-    this.getBusinessInfo(1);
-    this.getBusinessAddress(1);
+    this.getBusinessInfo(5);
+    this.getBusinessAddress(5);
   }
 
   getBusinessInfo(ID) {
@@ -96,16 +95,20 @@ class App extends React.Component {
             relativeaddress: "b/t Townsend St & Bryant St",
             relativedistrict: "SOMA",
           });
+        } else if (address.includes("Grove")) {
+          this.setState({
+            relativeaddress: "b/t Hayes St & Fulton St",
+            relativedistrict: "Hayes",
+          });
         }
         Geocode.setApiKey(Api.KEY);
         Geocode.fromAddress(address).then(
           response => {
             const { lat, lng } = response.results[0].geometry.location;
-            console.log(response.results[0])
             this.setState({
               longitude: lng,
               latitude: lat,
-            })
+            });
           },
           error => {
             console.error(error);
@@ -136,11 +139,16 @@ class App extends React.Component {
     } = this.state;
     return (
       <div>
+        <Search handleSearch={this.handleSearch} />
         <div className="Mapbox">
           <div className="GoogleMap">
             <GoogleMap
               google={this.props.google}
               initialCenter={{
+                lat: latitude,
+                lng: longitude,
+              }}
+              center={{
                 lat: latitude,
                 lng: longitude,
               }}
@@ -165,7 +173,6 @@ class App extends React.Component {
           </div>
           <div className="BusinessInfo">
             <Businessinfo businessInfo={businessInfo} />
-            <Search handleSearch={this.handleSearch} />
           </div>
         </div>
       </div>
