@@ -14,7 +14,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      businessHours: {},
+      businessHours: [],
       businessInfo: {},
       address: null,
       relativeaddress: null,
@@ -47,10 +47,10 @@ class App extends React.Component {
             businessInfo[key] = 'Yes';
           }
         });
-        const businessHours = {};
+        const businessHours = [];
         Object.entries(data[0]).forEach(([key, value]) => {
           if (key === 'mon' || key === 'tue' || key === 'wed' || key === 'thu' || key === 'fri' || key === 'sat' || key === 'sun') {
-            businessHours[key] = value;
+            businessHours.push({ val: value, tag: key.charAt(0).toUpperCase() + key.slice(1) });
           }
         });
         this.setState({
@@ -71,38 +71,9 @@ class App extends React.Component {
         this.setState({
           address: address,
           phonenumber: data[0].phone_number,
+          relativeaddress: data[0].relative_location,
+          relativedistrict: data[0].relative_district,
         });
-        if (address.includes("Fillmore")) {
-          this.setState({
-            relativeaddress: "b/t Webster St & Steiner St",
-            relativedistrict: "Western Addition, Fillmore",
-          });
-        } else if (address.includes("Hayes")) {
-          this.setState({
-            relativeaddress: "b/t Grove St & Fell St",
-            relativedistrict: "Hayes Valley",
-          });
-        } else if (address.includes("Valencia")) {
-          this.setState({
-            relativeaddress: "b/t Guerrero St & Mission St",
-            relativedistrict: "Mission",
-          });
-        } else if (address.includes("Mission")) {
-          this.setState({
-            relativeaddress: "b/t Valencia St & S Van Ness St",
-            relativedistrict: "Mission",
-          });
-        } else if (address.includes("Brannan")) {
-          this.setState({
-            relativeaddress: "b/t Townsend St & Bryant St",
-            relativedistrict: "SOMA",
-          });
-        } else if (address.includes("Grove")) {
-          this.setState({
-            relativeaddress: "b/t Hayes St & Fulton St",
-            relativedistrict: "Hayes",
-          });
-        }
         Geocode.setApiKey(Api.KEY);
         Geocode.fromAddress(address).then(
           response => {
