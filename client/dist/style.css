@@ -81,14 +81,14 @@
 }
 
 .Hours {
-  font-family: arial;
-  font-size: 4 px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
   padding-top: 10px;
   box-sizing: border-box;
 }
 
 .MoreBusinessInfoHeading {
-  font-family: arial;
+  font-family: Arial;
   font-size: 20 px;
   font-weight: bold;
   color: #CF2525;
@@ -97,8 +97,8 @@
 }
 
 .MoreBusinessInfo {
-  font-family: arial;
-  font-size: 4 px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
   padding-top: 10px;
   box-sizing: border-box;
 }
