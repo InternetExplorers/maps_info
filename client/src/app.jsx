@@ -101,6 +101,7 @@ class App extends React.Component {
         Geocode.fromAddress(address).then(
           response => {
             const { lat, lng } = response.results[0].geometry.location;
+            console.log(response.results[0])
             this.setState({
               longitude: lng,
               latitude: lat,
