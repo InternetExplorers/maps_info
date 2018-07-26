@@ -8,6 +8,7 @@ import Api from '../../config.js';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import Geocode from "react-geocode";
 import GoogleMap from './Map.jsx';
+import Mapinfo from './Mapinfo.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,6 +17,8 @@ class App extends React.Component {
       businessHours: {},
       businessInfo: {},
       address: null,
+      relativeaddress: null,
+      relativedistrict: null,
       phonenumber: null,
       longitude: null,
       latitude: null,
@@ -65,6 +68,32 @@ class App extends React.Component {
         this.setState({
           address: address,
         });
+        if (address.includes("fillmore")) {
+          this.setState({
+            relativeaddress: "b/t Webster St & Steiner St",
+            relativedistrict: "Western Addition, Fillmore",
+          });
+        } else if (address.includes("hayes")) {
+          this.setState({
+            relativeAddress: "b/t Grove St & Fell St",
+            relativedistrict: "Hayes Valley",
+          });
+        } else if (address.includes("valencia")) {
+          this.setState({
+            relativeAddress: "b/t Guerrero St & Mission St",
+            relativedistrict: "Mission",
+          });
+        } else if (address.includes("mission")) {
+          this.setState({
+            relativeAddress: "b/t Valencia St & S Van Ness St",
+            relativedistrict: "Mission",
+          });
+        } else if (address.includes("brannan")) {
+          this.setState({
+            relativeAddress: "b/t Townsend St & Bryant St",
+            relativedistrict: "SOMA",
+          });
+        }
         Geocode.setApiKey(Api.KEY);
         Geocode.fromAddress(address).then(
           response => {
@@ -100,6 +129,9 @@ class App extends React.Component {
             onClick={this.onMapClicked}
             style={{ width: '45%', height: '45%', position: 'relative' }}
           />
+        </div>
+        <div>
+          <Mapinfo phoneNumber={this.state.phonenumber} address={this.state.address} a/>
         </div>
         <div>
           
