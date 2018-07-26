@@ -3,8 +3,8 @@ const connection = require('./connection.js');
 
 const mockAddress = function () {
   var streetNum = [1,2,3,4,5,6,7,8,9,10];
-  var streetName = ['fillmore st', 'grove st', 'hayes st', 'valencia st', 'mission st', 'brannan st', 'geary st', 'market st', 'folsom st', '1st st'];
-  return `${streetNum[Math.floor(Math.random() * 10)]}, ${streetName[Math.floor(Math.random() * 10)]}, San Francisco, CA`;
+  var streetName = ['Fillmore St', 'Grove St', 'Hayes St', 'Valencia St', 'Mission St', 'Brannan St'];
+  return `${streetNum[Math.floor(Math.random() * 10)]} ${streetName[Math.floor(Math.random() * 6)]}, San Francisco, CA`;
 };
 
 const mockPhoneNum = function () {
@@ -44,12 +44,34 @@ const insertMockTime = () => {
 
 const insertMockAddress = () => {
   for (let i = 1; i <= 100; i++) {
-    const queryStr = `INSERT INTO map (address, relative_location, phone_number, business_id) VALUES('${mockAddress()}', '${mockAddress()}', '${mockPhoneNum()}', ${i})`;
+    let address = mockAddress();
+    let relativeaddress = "";
+    let relativedistrict = "";
+    if (address.includes("Fillmore")) {
+      relativeaddress = "b/t Webster St & Steiner St";
+      relativedistrict = "Western Addition, Fillmore";
+    } else if (address.includes("Hayes")) {     
+      relativeaddress = "b/t Grove St & Fell St";
+      relativedistrict = "Hayes Valley";
+    } else if (address.includes("Valencia")) {
+      relativeaddress = "b/t Guerrero St & Mission St";
+      relativedistrict = "Mission";
+    } else if (address.includes("Mission")) {
+      relativeaddress = "b/t Valencia St & S Van Ness St";
+      relativedistrict = "Mission";
+    } else if (address.includes("Brannan")) {
+      relativeaddress = "b/t Townsend St & Bryant St";
+      relativedistrict = "SOMA";
+    } else if (address.includes("Grove")) {
+      relativeaddress = "b/t Hayes St & Fulton St";
+      relativedistrict = "Hayes";
+    }
+    const queryStr = `INSERT INTO map (address, relative_location, relative_district, phone_number, business_id) VALUES('${address}', '${relativeaddress}', '${relativedistrict}', '${mockPhoneNum()}', ${i})`;
     connection.query(queryStr, (err, results) => {
       if (err) {
         throw err;
       }
-    });  
+    });
   }
 };
 

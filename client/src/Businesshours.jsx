@@ -1,26 +1,20 @@
 import React from 'react';
+import Businesshoursentries from './Businesshoursentries.jsx'
 
 const businessHours = (props) => {
   return (
     <div>
-      <b>Hours</b>
-      <br></br>
-      <b>Mon</b> {props.businessHours.mon}
-      <br />
-      <b>Tue</b> {props.businessHours.tue}
-      <br />
-      <b>Wed</b> {props.businessHours.wed}
-      <br />
-      <b>Thu</b> {props.businessHours.thu}
-      <br />
-      <b>Fri</b> {props.businessHours.fri}
-      <br />
-      <b>Sat</b> {props.businessHours.sat}
-      <br />
-      <b>Sun</b> {props.businessHours.sun}
-      <br />
+      <span className="HoursHeading">
+      Hours
+      </span>
+      <div className="Hours">
+      {props.businessHours.map(value => {
+        return <Businesshoursentries hoursData={value} />
+      })}
+      </div>
     </div>
   );
 };
 
-export default businessHours
+export default businessHours;
+
