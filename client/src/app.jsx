@@ -114,7 +114,18 @@ class App extends React.Component {
     });
   }
 
-  handleSearch(searchValue) {
+  handleSearch(businessName) {
+
+    $.ajax({
+      type: 'GET',
+      url: `/businesses/${businessName}`,
+      contentType: 'application/json',
+      success: (data) => {
+        const businessID = data[0].id;
+        this.getBusinessInfo(businessID);
+        this.getBusinessAddress(businessID);
+      },
+    });
   }
 
   render() {

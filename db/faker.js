@@ -4,7 +4,7 @@ const connection = require('./connection.js');
 const mockAddress = function () {
   var streetNum = [1,2,3,4,5,6,7,8,9,10];
   var streetName = ['Fillmore St', 'Grove St', 'Hayes St', 'Valencia St', 'Mission St', 'Brannan St'];
-  return `${streetNum[Math.floor(Math.random() * 10)]} ${streetName[Math.floor(Math.random() * 10)]}, San Francisco, CA`;
+  return `${streetNum[Math.floor(Math.random() * 10)]} ${streetName[Math.floor(Math.random() * 6)]}, San Francisco, CA`;
 };
 
 const mockPhoneNum = function () {
