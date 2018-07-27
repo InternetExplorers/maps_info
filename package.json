@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "testing": "jest --watch *.jsx --coverage"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/Dev-Stars/maps_info#readme",
   "devDependencies": {
+    "babel-jest": "^23.4.0",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
@@ -30,6 +32,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "jest": "^23.4.1",
+    "react-test-renderer": "^16.4.1",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0"
   },
