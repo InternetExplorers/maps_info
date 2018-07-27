@@ -115,7 +115,9 @@ class App extends React.Component {
     } = this.state;
     return (
       <div>
-        <Search handleSearch={this.handleSearch} />
+        <div className="search">
+          <Search handleSearch={this.handleSearch} />
+        </div>
         <div className="Mapbox">
           <div className="GoogleMap">
             <GoogleMap
