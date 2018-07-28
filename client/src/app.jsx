@@ -75,6 +75,7 @@ class App extends React.Component {
           relativedistrict: data[0].relative_district,
         });
         Geocode.setApiKey(Api.KEY);
+        console.log(Geocode.fromAddress(address))
         Geocode.fromAddress(address).then(
           response => {
             const { lat, lng } = response.results[0].geometry.location;
