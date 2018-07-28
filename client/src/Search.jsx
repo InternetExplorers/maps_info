@@ -18,7 +18,7 @@ class Search extends React.Component {
     return (
       <div>
         <input type="text" onChange={this.handleValueChange.bind(this)} />
-        <input type="submit" value="Search" onClick={() => { this.props.handleSearch(this.state.searchValue); }} />
+        <input className="searchButton" type="submit" value="Search" onClick={() => { this.props.handleSearch(this.state.searchValue); }} />
       </div>
     );
   }

@@ -7,7 +7,7 @@ class googleMap extends React.Component {
   render() {
     return (
       <div className='Map'>
-        <Map 
+        <Map
           google={this.props.google}
           zoom={this.props.zoom}
           initialCenter={this.props.initialCenter}
