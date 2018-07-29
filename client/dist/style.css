@@ -20,6 +20,38 @@
 .MapInfo {
   width: 288px;
   height: 156px;
+  padding-top: 5px;
+}
+
+.address-1{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 1px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+}
+.relative-address{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 1px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+}
+
+.relative-district{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 1px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+}
+
+.get-direction{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 1px;
+  border: 1px solid grey;
+  box-sizing: border-box;
 }
 
 .LeftIcons {
@@ -27,7 +59,7 @@
   height: 150px;
   background-image: url(https://s3.us-east-2.amazonaws.com/maps12345/Screen+Shot+2018-07-26+at+3.00.14+PM.png);
   background-size: 22px 150px;
-  top-padding: 5px;
+  top-padding: 9px;
 }
 
 .RightIcons {
@@ -37,6 +69,7 @@
   background-size: 46px 20px;
   background-repeat: no-repeat;
 }
+
 }
 .address-box {
   width: 254px;
@@ -82,7 +115,7 @@
 
 .Hours {
   font-family: Arial, sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   padding-top: 10px;
   box-sizing: border-box;
 }
@@ -98,7 +131,7 @@
 
 .MoreBusinessInfo {
   font-family: Arial, sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   padding-top: 10px;
   box-sizing: border-box;
 }

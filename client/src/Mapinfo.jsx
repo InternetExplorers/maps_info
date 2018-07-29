@@ -16,20 +16,22 @@ export default class Mapinfo extends React.Component {
     } = this.props;
     return (
       <div className="main-map-info">
-        <span className="address-box">
+        <span>
+          <div className="address-1">
           <b>
           {address}
           </b>
-          <br />
+          </div>
+          <div className="relative-address">
           {relativeAddress}
-          <br />
+          </div>
+          <div className="relative-district">
           {relativeDistrict}
-          <br />
+          </div>
         </span>
-        <span className="get-direction">
+        <div className="get-direction">
         Get Directions
-        <br />
-        </span>
+        </div>
         <span className="phone-number">
         {phoneNumber}
         <br />
@@ -42,7 +44,7 @@ export default class Mapinfo extends React.Component {
         Send to your Phone
         </span>
       </div>
-    )
+    );
   }
 }
 
