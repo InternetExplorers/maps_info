@@ -7,8 +7,8 @@ import Businessinfo from './Businessinfo.jsx';
 import Api from '../../config.js';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import Geocode from "react-geocode";
-import GoogleMap from './Map.jsx';
-import Mapinfo from './Mapinfo.jsx';
+import Googlemap from './map.jsx';
+import Mapinfo from './mapinfo.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -115,10 +115,12 @@ class App extends React.Component {
     } = this.state;
     return (
       <div>
-        <Search handleSearch={this.handleSearch} />
+        <div className="search">
+          <Search handleSearch={this.handleSearch} />
+        </div>
         <div className="Mapbox">
           <div className="GoogleMap">
-            <GoogleMap
+            <Googlemap
               google={this.props.google}
               initialCenter={{
                 lat: latitude,
@@ -134,14 +136,24 @@ class App extends React.Component {
             />
           </div>
           <div className="MapInfo">
-            <Mapinfo
-              phoneNumber={phonenumber}
-              address={address}
-              relativeAddress={relativeaddress}
-              relativeDistrict={relativedistrict}
-              url={url}
-              initialurl={initialurl}
-            />
+            <table>
+              <tr>
+                <td className="LeftIcons">
+                </td>
+                <td>
+                  <Mapinfo
+                    phoneNumber={phonenumber}
+                    address={address}
+                    relativeAddress={relativeaddress}
+                    relativeDistrict={relativedistrict}
+                    url={url}
+                    initialurl={initialurl}
+                  />
+                </td>
+                <td className="RightIcons">
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
         <br />
@@ -159,4 +171,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App;

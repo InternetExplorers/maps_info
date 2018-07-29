@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "testing": "jest --watch *.jsx --coverage"
   },
   "repository": {
     "type": "git",
@@ -18,10 +19,12 @@
   },
   "homepage": "https://github.com/Dev-Stars/maps_info#readme",
   "devDependencies": {
+    "babel-jest": "^23.4.0",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-airbnb-standard": "^2.1.6",
@@ -29,6 +32,9 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "jest": "^23.4.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.4.1",
+    "supertest": "^3.1.0",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0"
   },
@@ -40,8 +46,10 @@
     "jquery": "^3.3.1",
     "mysql": "^2.16.0",
     "path": "^0.12.7",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-geocode": "^0.1.2"
+    "react-geocode": "^0.1.2",
+    "sinon": "^6.1.4"
   }
 }
