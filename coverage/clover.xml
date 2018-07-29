@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1532900381308" clover="3.2.0">
-  <project timestamp="1532900381308" name="All files">
-    <metrics statements="164" coveredstatements="69" conditionals="41" coveredconditionals="6" methods="45" coveredmethods="23" elements="250" coveredelements="98" complexity="0" loc="164" ncloc="164" packages="4" files="13" classes="13">
+<coverage generated="1532902068504" clover="3.2.0">
+  <project timestamp="1532902068504" name="All files">
+    <metrics statements="184" coveredstatements="55" conditionals="43" coveredconditionals="6" methods="39" coveredmethods="17" elements="266" coveredelements="78" complexity="0" loc="184" ncloc="184" packages="4" files="12" classes="12">
       <package name="maps_info">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="config.js" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/config.js">
-          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="2" type="stmt"/>
-        </file>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <file name="sum.js" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/sum.js">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="2" count="1" type="stmt"/>
@@ -15,22 +11,22 @@
         </file>
       </package>
       <package name="maps_info.client.src">
-        <metrics statements="58" coveredstatements="30" conditionals="13" coveredconditionals="0" methods="24" coveredmethods="15"/>
+        <metrics statements="79" coveredstatements="17" conditionals="15" coveredconditionals="0" methods="18" coveredmethods="9"/>
         <file name="Businesshours.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/Businesshours.jsx">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="4" count="2" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
           <line num="5" count="1" type="stmt"/>
           <line num="6" count="1" type="stmt"/>
           <line num="13" count="3" type="stmt"/>
         </file>
         <file name="Businesshoursentries.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/Businesshoursentries.jsx">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="3" count="2" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
           <line num="4" count="3" type="stmt"/>
         </file>
         <file name="Businessinfo.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/Businessinfo.jsx">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="3" count="2" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
           <line num="4" count="1" type="stmt"/>
         </file>
         <file name="Index.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/Index.jsx">
@@ -41,10 +37,15 @@
           <line num="5" count="0" type="stmt"/>
         </file>
         <file name="Map.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/Map.jsx">
-          <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
           <line num="12" count="0" type="stmt"/>
           <line num="13" count="0" type="stmt"/>
-          <line num="34" count="2" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
         </file>
         <file name="Mapinfo.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/Mapinfo.jsx">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -52,7 +53,7 @@
           <line num="7" count="1" type="stmt"/>
           <line num="16" count="1" type="stmt"/>
           <line num="17" count="1" type="stmt"/>
-          <line num="51" count="2" type="stmt"/>
+          <line num="51" count="1" type="stmt"/>
         </file>
         <file name="Search.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/Search.jsx">
           <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
@@ -63,13 +64,25 @@
           <line num="21" count="0" type="stmt"/>
         </file>
         <file name="app.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/app.jsx">
-          <metrics statements="33" coveredstatements="12" conditionals="13" coveredconditionals="0" methods="13" coveredmethods="6"/>
-          <line num="15" count="7" type="stmt"/>
-          <line num="16" count="7" type="stmt"/>
-          <line num="28" count="7" type="stmt"/>
-          <line num="32" count="9" type="stmt"/>
-          <line num="33" count="9" type="stmt"/>
-          <line num="37" count="8" type="stmt"/>
+          <metrics statements="49" coveredstatements="0" conditionals="15" coveredconditionals="0" methods="8" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
           <line num="42" count="0" type="stmt"/>
           <line num="43" count="0" type="stmt"/>
           <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -81,22 +94,26 @@
           <line num="52" count="0" type="cond" truecount="0" falsecount="9"/>
           <line num="53" count="0" type="stmt"/>
           <line num="56" count="0" type="stmt"/>
-          <line num="65" count="8" type="stmt"/>
+          <line num="64" count="0" type="stmt"/>
+          <line num="65" count="0" type="stmt"/>
           <line num="70" count="0" type="stmt"/>
           <line num="71" count="0" type="stmt"/>
           <line num="77" count="0" type="stmt"/>
           <line num="78" count="0" type="stmt"/>
+          <line num="79" count="0" type="stmt"/>
           <line num="80" count="0" type="stmt"/>
           <line num="81" count="0" type="stmt"/>
           <line num="87" count="0" type="stmt"/>
-          <line num="95" count="1" type="stmt"/>
+          <line num="94" count="0" type="stmt"/>
+          <line num="95" count="0" type="stmt"/>
           <line num="100" count="0" type="stmt"/>
           <line num="101" count="0" type="stmt"/>
           <line num="102" count="0" type="stmt"/>
-          <line num="105" count="1" type="stmt"/>
-          <line num="106" count="1" type="stmt"/>
-          <line num="115" count="8" type="stmt"/>
-          <line num="116" count="8" type="stmt"/>
+          <line num="105" count="0" type="stmt"/>
+          <line num="106" count="0" type="stmt"/>
+          <line num="111" count="0" type="stmt"/>
+          <line num="115" count="0" type="stmt"/>
+          <line num="116" count="0" type="stmt"/>
         </file>
       </package>
       <package name="maps_info.db">
