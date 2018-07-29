@@ -7,8 +7,8 @@ import Businessinfo from './Businessinfo.jsx';
 import Api from '../../config.js';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import Geocode from "react-geocode";
-import GoogleMap from './Map.jsx';
-import Mapinfo from './Mapinfo.jsx';
+import GoogleMap from './map.jsx';
+import Mapinfo from './mapinfo.jsx';
 
 class App extends React.Component {
   constructor(props) {

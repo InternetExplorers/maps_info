@@ -11,11 +11,6 @@ enzyme.configure({ adapter: new Adapter() });
 
 describe('Business hours testing', () => {
 
-  //Need this code 
-  // it('pass in the correct props to business hours', () => {
-    
-  // });
-
   it('should render business hours entries', () => {
     const wrapper = mount(<Businesshours businessHours={[1,2,3]} />)
     expect(wrapper.find('.HoursHeading').exists()).toEqual(true);

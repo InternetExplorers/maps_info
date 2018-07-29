@@ -4,12 +4,17 @@ const path = require('path');
 const connection = require('../db/connection.js');
 
 const app = express();
+const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
+
+app.get('/', (req,res) => {
+  res.send(200);
+})
 
 app.get('/businesses/:business_id/business_info', (req, res) => {
   const businessId = Number(req.params.business_id);
@@ -38,7 +43,6 @@ app.get('/businesses/:business_id/business_map', (req, res) => {
 app.get('/businesses/:business_name', (req, res) => {
   const businessName = req.params.business_name;
   const queryStr = `SELECT id FROM businesses WHERE name = '${businessName}'`;
-  console.log(queryStr)
   connection.query(queryStr, (err, data) => {
     if (err) {
       res.status(400).send(err);
@@ -48,6 +52,8 @@ app.get('/businesses/:business_name', (req, res) => {
   });
 });
 
-app.listen(3001, () => {
+app.listen(port, () => {
   console.log('App listening to port 3001!');
 });
+
+module.exports = app;

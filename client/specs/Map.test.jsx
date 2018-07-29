@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react-dom/test-utils';
 import sinon from 'sinon';
-import Googlemap from '../src/Map.jsx';
+import Googlemap from '../src/map.jsx';
 
 enzyme.configure({ adapter: new Adapter() });
 
@@ -27,7 +27,7 @@ describe('Map test', () => {
       zoom={14}
       onClick={undefined}
       style={{ width: '286', height: '135', position: 'relative' }}
-     />)
+     />);
     expect(wrapper.find('.Map').exists()).toEqual(false);
   });
 
