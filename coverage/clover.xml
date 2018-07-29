@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1532889330125" clover="3.2.0">
-  <project timestamp="1532889330125" name="All files">
-    <metrics statements="164" coveredstatements="70" conditionals="41" coveredconditionals="6" methods="45" coveredmethods="24" elements="250" coveredelements="100" complexity="0" loc="164" ncloc="164" packages="4" files="13" classes="13">
+<coverage generated="1532900381308" clover="3.2.0">
+  <project timestamp="1532900381308" name="All files">
+    <metrics statements="164" coveredstatements="69" conditionals="41" coveredconditionals="6" methods="45" coveredmethods="23" elements="250" coveredelements="98" complexity="0" loc="164" ncloc="164" packages="4" files="13" classes="13">
       <package name="maps_info">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <file name="config.js" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/config.js">
@@ -39,6 +39,20 @@
           <line num="2" count="0" type="stmt"/>
           <line num="3" count="0" type="stmt"/>
           <line num="5" count="0" type="stmt"/>
+        </file>
+        <file name="Map.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/Map.jsx">
+          <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="34" count="2" type="stmt"/>
+        </file>
+        <file name="Mapinfo.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/Mapinfo.jsx">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="17" count="1" type="stmt"/>
+          <line num="51" count="2" type="stmt"/>
         </file>
         <file name="Search.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/Search.jsx">
           <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
@@ -83,20 +97,6 @@
           <line num="106" count="1" type="stmt"/>
           <line num="115" count="8" type="stmt"/>
           <line num="116" count="8" type="stmt"/>
-        </file>
-        <file name="map.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/map.jsx">
-          <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-          <line num="12" count="0" type="stmt"/>
-          <line num="13" count="0" type="stmt"/>
-          <line num="34" count="2" type="stmt"/>
-        </file>
-        <file name="mapinfo.jsx" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/client/src/mapinfo.jsx">
-          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="6" count="1" type="stmt"/>
-          <line num="7" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="17" count="1" type="stmt"/>
-          <line num="49" count="2" type="stmt"/>
         </file>
       </package>
       <package name="maps_info.db">
@@ -179,9 +179,9 @@
         </file>
       </package>
       <package name="maps_info.server">
-        <metrics statements="33" coveredstatements="30" conditionals="8" coveredconditionals="5" methods="7" coveredmethods="7"/>
+        <metrics statements="33" coveredstatements="29" conditionals="8" coveredconditionals="5" methods="7" coveredmethods="6"/>
         <file name="server.js" path="/Users/Thu/Documents/Hackreactor/Front_end_capstone/maps_info/server/server.js">
-          <metrics statements="33" coveredstatements="30" conditionals="8" coveredconditionals="5" methods="7" coveredmethods="7"/>
+          <metrics statements="33" coveredstatements="29" conditionals="8" coveredconditionals="5" methods="7" coveredmethods="6"/>
           <line num="1" count="1" type="stmt"/>
           <line num="2" count="1" type="stmt"/>
           <line num="3" count="1" type="stmt"/>
@@ -213,7 +213,7 @@
           <line num="44" count="0" type="stmt"/>
           <line num="46" count="2" type="stmt"/>
           <line num="51" count="1" type="stmt"/>
-          <line num="52" count="1" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
           <line num="55" count="1" type="stmt"/>
         </file>
       </package>

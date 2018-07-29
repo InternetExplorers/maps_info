@@ -1,9 +1,11 @@
-coverage/
-
-node_modules/
 
 config.js
-
-.DS_Store
-
 client/specs/false/
+coverage/
+node_modules/
+
+
+
+
+
+

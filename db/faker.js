@@ -12,8 +12,8 @@ const mockPhoneNum = function () {
 };
 
 const mockTime = function () {
-  const openingTime = `${Math.floor(Math.random() * 6) + 6}:${Math.floor(Math.random() * 60)} am`;
-  const closingTime = `${Math.floor(Math.random() * 11) + 1}:${Math.floor(Math.random() * 60)} pm`;
+  const openingTime = `${Math.floor(Math.random() * 6) + 6}:${Math.floor(Math.random() * 50) + 10} am`;
+  const closingTime = `${Math.floor(Math.random() * 11) + 1}:${Math.floor(Math.random() * 50) + 10} pm`;
   return `${openingTime} - ${closingTime}`;
 };
 
