@@ -1,7 +1,8 @@
-coverage/
 
-node_modules/
+client/specs/false/
 
 config.js
 
-client/specs/false/
+node_modules/
+
+coverage/
