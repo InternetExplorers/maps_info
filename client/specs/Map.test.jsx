@@ -10,25 +10,16 @@ import Googlemap from '../src/map.jsx';
 enzyme.configure({ adapter: new Adapter() });
 
 describe('Map test', () => {
-
- //need to change it to false
-
   it('should render map', () => {
-    const wrapper = shallow(<Googlemap
-      google={undefined}
-      initialCenter={{
-        lat: 37.7777515,
-        lng: -122.4164152,
-      }}
-      center={{
-        lat: 37.7777515,
-        lng: -122.4164152,
-      }}
-      zoom={14}
-      onClick={undefined}
-      style={{ width: '286', height: '135', position: 'relative' }}
+    const wrapper = mount(<Googlemap
+       phoneNumber={"123"}
+        address={"123"}
+        relativeAddress={"123"}
+        relativeDistrict={"123"}
+        url={"123"}
+        initialurl={"123"}
      />);
-    expect(wrapper.find('.Map').exists()).toEqual(false);
+    expect(wrapper.find('.main-map').exists()).toEqual(false);
   });
 
 });

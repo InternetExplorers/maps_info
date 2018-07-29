@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class Mapinfo extends React.Component {
   constructor(props) {
@@ -6,11 +7,6 @@ export default class Mapinfo extends React.Component {
     this.state = {
       currenturl: this.props.initialurl,
     };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(e) {
-    //todo
   }
 
   render() {
@@ -19,7 +15,7 @@ export default class Mapinfo extends React.Component {
       relativeDistrict, url, initialurl,
     } = this.props;
     return (
-      <div>
+      <div className="main-map-info">
         <span className="address-box">
           <b>
           {address}
@@ -34,7 +30,7 @@ export default class Mapinfo extends React.Component {
         Get Directions
         <br />
         </span>
-        <span className="phone-number" value={phoneNumber} onChange={this.handleChange}>
+        <span className="phone-number">
         {phoneNumber}
         <br />
         </span>
@@ -49,3 +45,7 @@ export default class Mapinfo extends React.Component {
     )
   }
 }
+
+Mapinfo.propTypes = {
+  phoneNumber: PropTypes.any.isRequired,
+};

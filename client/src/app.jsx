@@ -7,7 +7,7 @@ import Businessinfo from './Businessinfo.jsx';
 import Api from '../../config.js';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import Geocode from "react-geocode";
-import GoogleMap from './map.jsx';
+import Googlemap from './map.jsx';
 import Mapinfo from './mapinfo.jsx';
 
 class App extends React.Component {
@@ -120,7 +120,7 @@ class App extends React.Component {
         </div>
         <div className="Mapbox">
           <div className="GoogleMap">
-            <GoogleMap
+            <Googlemap
               google={this.props.google}
               initialCenter={{
                 lat: latitude,

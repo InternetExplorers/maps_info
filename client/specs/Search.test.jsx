@@ -13,7 +13,7 @@ describe('Search testing', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Search />);
+    wrapper = shallow(<Search handleSearch={() => {}} />);
   });
 
   it('render the correct search value to state', () => {
@@ -21,15 +21,11 @@ describe('Search testing', () => {
     expect(wrapper.state('searchValue')).toEqual('cookies');
   });
 
-  //need the following code
-  // // it('simulates click events', () => {
-  // //   const onButtonClick = sinon.spy();
-  // //   const wrapper = shallow(<Search onClick={onButtonClick} />);
-  // //   wrapper.find('button').simulate('click');
-  // //   expect(onButtonClick).to.have.property('callCount', 1);
-  // // });
-  // it('simulate click events and pass in correct value', () => {
-  //    wrapper.find('.searchButton').simulate('click');
-  //    expect(onClick).to.have.property('callCount', 1);
-  // });
+  it('should simulate search click', () => {
+    const handleSearchClick = jest.fn();
+    const wrapper = shallow(<input onClick={handleSearchClick} />);
+    wrapper.simulate('click');
+    expect(handleSearchClick).toBeCalled();
+  });
+
 });

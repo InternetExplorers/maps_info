@@ -12,10 +12,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/', (req,res) => {
-  res.send(200);
-})
-
 app.get('/businesses/:business_id/business_info', (req, res) => {
   const businessId = Number(req.params.business_id);
   const queryStr = `SELECT * FROM business_info, more_business_info WHERE business_info.business_id = more_business_info.business_id AND business_info.business_id = ${businessId}`;
