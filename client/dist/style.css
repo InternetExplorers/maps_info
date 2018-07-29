@@ -18,56 +18,86 @@
 }
 
 .MapInfo {
+  display:flex;
   width: 288px;
   height: 156px;
   padding-top: 5px;
 }
 
+.main-map-info{
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3px;
+  line-height: 1.25;
+}
+
 .address-1{
   font-size: 14px;
+  width: 130px;
   font-family: Arial, sans-serif;
   margin-bottom: 1px;
-  border: 1px solid grey;
   box-sizing: border-box;
 }
+
 .relative-address{
   font-size: 14px;
   font-family: Arial, sans-serif;
-  margin-bottom: 1px;
-  border: 1px solid grey;
+  margin-bottom: 2px;
   box-sizing: border-box;
 }
 
 .relative-district{
   font-size: 14px;
   font-family: Arial, sans-serif;
-  margin-bottom: 1px;
-  border: 1px solid grey;
+  margin-bottom: 2px;
   box-sizing: border-box;
 }
 
 .get-direction{
   font-size: 14px;
   font-family: Arial, sans-serif;
-  margin-bottom: 1px;
-  border: 1px solid grey;
+  margin-bottom: 3px;
+  box-sizing: border-box;
+}
+
+.url{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.phone-number{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 3px;
+  box-sizing: border-box;
+}
+
+.send-to-phone{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 3px;
   box-sizing: border-box;
 }
 
 .LeftIcons {
-  width: 20px;
+  min-width: 20px;
   height: 150px;
   background-image: url(https://s3.us-east-2.amazonaws.com/maps12345/Screen+Shot+2018-07-26+at+3.00.14+PM.png);
-  background-size: 22px 150px;
+  background-size: 22px 152px;
   top-padding: 9px;
+  box-sizing: border-box;
 }
 
 .RightIcons {
-  width: 46px;
-  height: 20px;
+  min-width: 46px;
+  min-height: 20px;
   background-image: url(https://s3.us-east-2.amazonaws.com/maps12345/Screen+Shot+2018-07-26+at+3.00.38+PM.png);
   background-size: 46px 20px;
   background-repeat: no-repeat;
+  box-sizing: border-box;
 }
 
 }
@@ -75,7 +105,6 @@
   width: 254px;
   height: 72px;
   box-sizing: border-box;
-  border: 1px solid grey;
 }
 
 .get-direction {

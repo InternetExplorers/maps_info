@@ -29,9 +29,9 @@ export default class Mapinfo extends React.Component {
           {relativeDistrict}
           </div>
         </span>
-        <div className="get-direction">
+        <span className="get-direction">
         Get Directions
-        </div>
+        </span>
         <span className="phone-number">
         {phoneNumber}
         <br />

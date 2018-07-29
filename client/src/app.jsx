@@ -136,24 +136,16 @@ class App extends React.Component {
             />
           </div>
           <div className="MapInfo">
-            <table>
-              <tr>
-                <td className="LeftIcons">
-                </td>
-                <td>
-                  <Mapinfo
-                    phoneNumber={phonenumber}
-                    address={address}
-                    relativeAddress={relativeaddress}
-                    relativeDistrict={relativedistrict}
-                    url={url}
-                    initialurl={initialurl}
-                  />
-                </td>
-                <td className="RightIcons">
-                </td>
-              </tr>
-            </table>
+            <div className="LeftIcons"></div>
+            <Mapinfo
+              phoneNumber={phonenumber}
+              address={address}
+              relativeAddress={relativeaddress}
+              relativeDistrict={relativedistrict}
+              url={url}
+              initialurl={initialurl}
+            />
+            <div className="RightIcons"></div>
           </div>
         </div>
         <br />
