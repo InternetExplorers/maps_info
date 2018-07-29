@@ -1,22 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Api from '../../config.js';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 
-class googleMap extends React.Component {
+class Googlemap extends React.Component {
   render() {
+    const {
+      google, zoom, initialCenter,
+      center, style,
+    } = this.props;
     return (
-      <div className='Map'>
-        <Map 
-          google={this.props.google}
-          zoom={this.props.zoom}
-          initialCenter={this.props.initialCenter}
-          center={this.props.center}
-          style={this.props.style}
+      <div className='main-map'>
+        <Map
+          google={google}
+          zoom={zoom}
+          initialCenter={initialCenter}
+          center={center}
+          style={style}
         >
           <Marker onClick={this.onMarkerClick}
                   name={'Current location'} 
-                  position={this.props.center}
+                  position={center}
           />
           <InfoWindow onClose={this.onInfoWindowClose}>
           </InfoWindow>
@@ -26,6 +31,10 @@ class googleMap extends React.Component {
   }
 }
 
+Googlemap.propTypes = {
+  center: PropTypes.any.isRequired,
+};
+
 export default GoogleApiWrapper({
   apiKey: (Api.KEY),
-})(googleMap);
+})(Googlemap);
