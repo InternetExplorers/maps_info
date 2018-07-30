@@ -1,0 +1,58 @@
+.GoogleMap {
+  border: 1px solid grey;
+  border-color: #DFDFDF;
+  width: 286px;
+  height: 135px;
+}
+
+.Mapbox {
+  width: 300px;
+  height: 315px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  border-color: #DFDFDF;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.LeftIcons {
+  min-width: 20px;
+  height: 150px;
+  background-image: url(https://s3.us-east-2.amazonaws.com/maps12345/Screen+Shot+2018-07-26+at+3.00.14+PM.png);
+  background-size: 22px 152px;
+  top-padding: 9px;
+  box-sizing: border-box;
+}
+
+.MapInfo {
+  display:flex;
+  width: 288px;
+  height: 156px;
+  padding-top: 5px;
+}
+
+.BusinessHours {
+  width: 270px;
+  height: 182px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  border-color: #DFDFDF;
+}
+
+.BusinessInfo {
+  width: 270px;
+  height: 300px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  border-color: #DFDFDF;
+}
+
+.RightIcons {
+  min-width: 46px;
+  min-height: 20px;
+  background-image: url(https://s3.us-east-2.amazonaws.com/maps12345/Screen+Shot+2018-07-26+at+3.00.38+PM.png);
+  background-size: 46px 20px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}

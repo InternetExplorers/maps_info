@@ -1,12 +1,13 @@
 import React from 'react';
+import style from './style/Businessinfo.css';
 
 const businessInfo = (props) => {
   return (
     <div>
-      <span className="MoreBusinessInfoHeading">
+      <span className={style.MoreBusinessInfoHeading}>
       More business info
       </span>
-      <div className="MoreBusinessInfo">
+      <div className={style.MoreBusinessInfo}>
         Take Reservations <b>{props.businessInfo.take_reservations}</b>
         <br />
         Delivery <b>{props.businessInfo.delivery}</b>
