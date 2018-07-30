@@ -37,7 +37,7 @@ class App extends React.Component {
   getBusinessInfo(ID) {
     $.ajax({
       type: 'GET',
-      url: `/businesses/${ID}/business_info`,
+      url: `http://localhost:3002/businesses/${ID}/business_info`,
       contentType: 'application/json',
       success: (data) => {
         const businessInfo = {};
@@ -65,7 +65,7 @@ class App extends React.Component {
   getBusinessAddress(ID) {
     $.ajax({
       type: 'GET',
-      url: `/businesses/${ID}/business_map`,
+      url: `http://localhost:3002/businesses/${ID}/business_map`,
       contentType: 'application/json',
       success: (data) => {
         const address = data[0].address;
@@ -95,7 +95,7 @@ class App extends React.Component {
   handleSearch(businessName) {
     $.ajax({
       type: 'GET',
-      url: `/businesses/${businessName}`,
+      url: `http://localhost:3002/businesses/${businessName}`,
       contentType: 'application/json',
       success: (data) => {
         const businessID = data[0].id;
