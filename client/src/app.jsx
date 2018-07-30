@@ -119,8 +119,8 @@ class App extends React.Component {
         <div className="search">
           <Search handleSearch={this.handleSearch} />
         </div>
-        <div className={style.Mapbox}>
-          <div className={style.GoogleMap}>
+        <div className="Mapbox">
+          <div className="GoogleMap">
             <Googlemap
               google={this.props.google}
               initialCenter={{
@@ -136,8 +136,8 @@ class App extends React.Component {
               style={{ width: '286', height: '135', position: 'relative' }}
             />
           </div>
-          <div className={style.MapInfo}>
-            <div className={style.LeftIcons}></div>
+          <div className="MapInfo">
+            <div className="LeftIcons"></div>
             <Mapinfo
               phoneNumber={phonenumber}
               address={address}
@@ -146,16 +146,16 @@ class App extends React.Component {
               url={url}
               initialurl={initialurl}
             />
-            <div className={style.RightIcons}></div>
+            <div className="RightIcons"></div>
           </div>
         </div>
         <br />
         <div>
-          <div className={style.BusinessHours}>
+          <div className="BusinessHours">
             <Businesshours businessHours={businessHours} />
             <br />
           </div>
-          <div className={style.BusinessInfo}>
+          <div className="BusinessInfo">
             <Businessinfo businessInfo={businessInfo} />
           </div>
         </div>

@@ -8,13 +8,14 @@
     "react-dev": "webpack -d --watch",
     "testing": "jest --watch *.jsx --coverage"
   },
-
   "jest": {
     "verbose": true,
     "testURL": "http://localhost/",
+    "moduleNameMapper": {
+       "\\.(css|less)$": "identity-obj-proxy"
+     },
     "transform": {".*": "<rootDir>/node_modules/jest-css-modules"}
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dev-Stars/maps_info.git"
@@ -41,6 +42,7 @@
     "eslint-plugin-react": "^7.10.0",
     "jest": "^23.4.1",
     "jest-css-modules": "^1.1.0",
+    "jest-css-modules-transform": "^2.0.0",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.4.1",
     "style-loader": "^0.21.0",
