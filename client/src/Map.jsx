@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Api from '../../config.js';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-
+import style from './style/Map.css'
 
 class Googlemap extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class Googlemap extends React.Component {
       center, style,
     } = this.props;
     return (
-      <div className='main-map'>
+      <div className={style.main_map}>
         <Map
           google={google}
           zoom={zoom}

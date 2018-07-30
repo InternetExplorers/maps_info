@@ -4,7 +4,7 @@ const path = require('path');
 const connection = require('../db/connection.js');
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 
 app.use(bodyParser.json());
 
@@ -49,7 +49,7 @@ app.get('/businesses/:business_name', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log('App listening to port 3001!');
+  console.log('App listening to port 3002!');
 });
 
 module.exports = app;

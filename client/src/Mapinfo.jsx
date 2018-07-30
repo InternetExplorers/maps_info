@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from './style/Mapinfo.css';
 
 export default class Mapinfo extends React.Component {
   constructor(props) {
@@ -15,32 +16,32 @@ export default class Mapinfo extends React.Component {
       relativeDistrict, url, initialurl,
     } = this.props;
     return (
-      <div className="main-map-info">
+      <div className={style.main_map_info}>
         <span>
-          <div className="address-1">
+          <div className={style.address_1}>
           <b>
           {address}
           </b>
           </div>
-          <div className="relative-address">
+          <div className={style.relative_address}>
           {relativeAddress}
           </div>
-          <div className="relative-district">
+          <div className={style.relative_district}>
           {relativeDistrict}
           </div>
         </span>
-        <div className="get-direction">
+        <span className={style.get_direction}>
         Get Directions
-        </div>
-        <span className="phone-number">
+        </span>
+        <span className={style.phone_number}>
         {phoneNumber}
         <br />
         </span>
-        <span className="url">
+        <span className={style.url}>
         {url}
         <br />
         </span>
-        <span className="send-to-phone">
+        <span className={style.send_to_phone}>
         Send to your Phone
         </span>
       </div>

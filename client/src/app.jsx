@@ -9,6 +9,7 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import Geocode from "react-geocode";
 import Googlemap from './map.jsx';
 import Mapinfo from './mapinfo.jsx';
+import style from './style/app.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -118,8 +119,8 @@ class App extends React.Component {
         <div className="search">
           <Search handleSearch={this.handleSearch} />
         </div>
-        <div className="Mapbox">
-          <div className="GoogleMap">
+        <div className={style.Mapbox}>
+          <div className={style.GoogleMap}>
             <Googlemap
               google={this.props.google}
               initialCenter={{
@@ -135,34 +136,26 @@ class App extends React.Component {
               style={{ width: '286', height: '135', position: 'relative' }}
             />
           </div>
-          <div className="MapInfo">
-            <table>
-              <tr>
-                <td className="LeftIcons">
-                </td>
-                <td>
-                  <Mapinfo
-                    phoneNumber={phonenumber}
-                    address={address}
-                    relativeAddress={relativeaddress}
-                    relativeDistrict={relativedistrict}
-                    url={url}
-                    initialurl={initialurl}
-                  />
-                </td>
-                <td className="RightIcons">
-                </td>
-              </tr>
-            </table>
+          <div className={style.MapInfo}>
+            <div className={style.LeftIcons}></div>
+            <Mapinfo
+              phoneNumber={phonenumber}
+              address={address}
+              relativeAddress={relativeaddress}
+              relativeDistrict={relativedistrict}
+              url={url}
+              initialurl={initialurl}
+            />
+            <div className={style.RightIcons}></div>
           </div>
         </div>
         <br />
         <div>
-          <div className="BusinessHours">
+          <div className={style.BusinessHours}>
             <Businesshours businessHours={businessHours} />
             <br />
           </div>
-          <div className="BusinessInfo">
+          <div className={style.BusinessInfo}>
             <Businessinfo businessInfo={businessInfo} />
           </div>
         </div>

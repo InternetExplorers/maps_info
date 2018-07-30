@@ -1,0 +1,73 @@
+
+.main_map_info{
+  height: 300px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3px;
+  line-height: 1.25;
+}
+
+.address_1{
+  font-size: 14px;
+  width: 130px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 1px;
+  box-sizing: border-box;
+}
+
+.relative_address{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 2px;
+  box-sizing: border-box;
+}
+
+.relative_district{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 2px;
+  box-sizing: border-box;
+}
+
+.get_direction{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 3px;
+  box-sizing: border-box;
+  color: #1878bb;
+}
+
+.get_direction {
+  width: 278px;
+  height: 18px;
+}
+
+.phone_number {
+  width: 278px;
+  height: 18px;
+}
+
+
+.url{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  color: #1878bb;
+}
+
+.phone_number{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 3px;
+  box-sizing: border-box;
+}
+
+.send_to_phone{
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 3px;
+  box-sizing: border-box;
+  color: #1878bb;
+}
