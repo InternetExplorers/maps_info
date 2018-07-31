@@ -8,7 +8,9 @@
     "react-dev": "webpack -d --watch",
     "testing": "jest --watch *.jsx --coverage",
     "build": "webpack --config webpack.prod.js",
-    "start": "node ./server/server.js"
+    "start": "node ./server/server.js",
+    "makeDB": "mysql -u root < db/schema.sql",
+    "loadDB": "node db/faker.js"
   },
   "jest": {
     "verbose": true,
