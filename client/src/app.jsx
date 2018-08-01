@@ -14,7 +14,9 @@ import style from './style/app.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    const { id } = this.props
     this.state = {
+      currentBusiness: id,
       businessHours: [],
       businessInfo: {},
       address: null,
@@ -30,8 +32,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getBusinessInfo(1);
-    this.getBusinessAddress(1);
+    this.getBusinessInfo(this.state.currentBusiness);
+    this.getBusinessAddress(this.state.currentBusiness);
   }
 
   getBusinessInfo(ID) {

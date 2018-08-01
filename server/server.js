@@ -3,14 +3,14 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const connection = require('../db/connection.js');
 
-const app = express();
 const port = process.env.PORT || 3002;
+const app = express();
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use('/:id/', express.static(path.join(__dirname, '../client/dist')));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
