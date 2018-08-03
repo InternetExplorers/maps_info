@@ -32,8 +32,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getBusinessInfo(this.state.currentBusiness);
-    this.getBusinessAddress(this.state.currentBusiness);
+    this.getBusinessInfo(1);
+    this.getBusinessAddress(1);
   }
 
   getBusinessInfo(ID) {

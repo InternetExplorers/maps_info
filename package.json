@@ -10,7 +10,8 @@
     "build": "webpack --config webpack.prod.js",
     "start": "node ./server/server.js",
     "makeDB": "mysql -u root < db/schema.sql",
-    "loadDB": "node db/faker.js"
+    "loadDB": "node db/faker.js",
+    "dev": "run-all"
   },
   "jest": {
     "verbose": true,
