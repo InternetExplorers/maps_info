@@ -3,9 +3,6 @@ coverage
 config.js
 client/specs/false/
 node_modules/
-
-
-
-
-
-
+bundle.js
+*.csv
+.DS_Store
